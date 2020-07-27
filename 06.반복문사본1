@@ -1,0 +1,645 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "colab_type": "text",
+    "id": "4qDBp69hF16E"
+   },
+   "source": [
+    "## 6. 반복문\n",
+    "### 6-1. while문 (조건반복)\n",
+    "- while 뒤에 조건을 쓰고 콜론을 붙인다. 예) while <조건식> :\n",
+    "- 들여쓰기 후에 참인 경우 명령문을 실행하고\n",
+    "- 거짓이면 while문을 빠져나온다.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "wCEdpnXGF16G"
+   },
+   "outputs": [],
+   "source": [
+    "while 반복할 조건 :\n",
+    "    실행할 문장(1)\n",
+    "    실행할 문장(1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "lr6BrDxFF16M"
+   },
+   "outputs": [],
+   "source": [
+    "# while 문의 기본 형태\n",
+    "\n",
+    "i = 0 # 변수선언\n",
+    "while i < 10 :          #while 뒤에 조건식\n",
+    "    print (i)           #여기까지만 쓰면 무한루프에 빠짐\n",
+    "    i = i + 1           #조건의 변경 "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "HgUXO-JcF16Q"
+   },
+   "outputs": [],
+   "source": [
+    "#연습. 1부터 10까지 모두 더한 값 출력하기\n",
+    "\n",
+    "i = 1\n",
+    "hap = 0 \n",
+    "while i < 11 :\n",
+    "    hap = hap + i \n",
+    "    i = i + 1\n",
+    "    print (hap) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "colab_type": "text",
+    "id": "whJ3LktoF16V"
+   },
+   "source": [
+    "#### [실습1] 위 코드에서 더한 값 55만 출력되게 수정해보세요.\n",
+    "힌트 : print (sum)의 위치를 while과 같은 곳으로 이동. 즉, 들여쓰기를 하지 않아 while문이 다 끝나고 실행되게 함."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "5ls0A-kHF16W"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "bAziXeXbF16b"
+   },
+   "outputs": [],
+   "source": [
+    "#연습. 비밀번호 맞을 때까지 반복\n",
+    "\n",
+    "pwd = \"0000\"\n",
+    "\n",
+    "while pwd !=\"1234\" :\n",
+    "    pwd = input (\"비밀번호는: \")\n",
+    "print(\"어서오세요\")    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "colab_type": "text",
+    "id": "atAaYaJdF16f"
+   },
+   "source": [
+    "### 6-2. for문\n",
+    "\n",
+    "- for 뒤에 변수(통상 i를 쓴다)를 적고 in 다음에 문자열, 리스트를 쓰고 콜론(:)으로 사용 \n",
+    "- range() 함수와 같이 사용하는 경우가 많다.\n",
+    "- 즉, for i in range(범위) : 또는 for i in [리스트]나 문자열 :\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "iN6TFHEyF16g"
+   },
+   "outputs": [],
+   "source": [
+    "#range()와 같이 사용\n",
+    "\n",
+    "for i in range(10): #0부터 9까지 10번 반복\n",
+    "    print (i, end=' ')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "g2F0UpJLF16m"
+   },
+   "outputs": [],
+   "source": [
+    "for i in range (0,5) : #0부터 5미만까지반복\n",
+    "    print (i, end=' ')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "5WGlmqyiF16r"
+   },
+   "outputs": [],
+   "source": [
+    "for i in range (1,10,2): #1부터 10미만까지 2씩 증가하며 반복\n",
+    "    print (i, end=' ')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "a8PD_xGKF16v"
+   },
+   "outputs": [],
+   "source": [
+    "#list()함수와 range()함수\n",
+    "list(range(1,10,2))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "dc2GpUxRF160",
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "for i in range (10,0,-1): # 10부터 0 전까지 1씩 감소하며 반복\n",
+    "    print (i, end=' ')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "wiK_a5otF165"
+   },
+   "outputs": [],
+   "source": [
+    "for i in range (5) :\n",
+    "    print (\"hello\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "GAQatvSTF16-"
+   },
+   "outputs": [],
+   "source": [
+    "#i와 함께 출력\n",
+    "for i in range (5) :\n",
+    "    print (i, \"hello\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "7mN79Ta3F17C"
+   },
+   "outputs": [],
+   "source": [
+    "#문자열과 같이 사용\n",
+    "for letter in \"Python\":\n",
+    "    print(letter)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "iCem4CgEF17G"
+   },
+   "outputs": [],
+   "source": [
+    "# 리스트와 같이 사용\n",
+    "\n",
+    "blackpink = [\"제니\", \"지수\", \"로제\", \"리사\"]\n",
+    "for member in blackpink :\n",
+    "    print (member)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "colab_type": "text",
+    "id": "FmJV8c0DF17J"
+   },
+   "source": [
+    "#### [실습2] 위 코드를 수정하여 멤버 수도 출력하게 하려면?\n",
+    "\n",
+    "- 힌트: count 변수를 만든 후, member가 하나씩 출력되면서 반복되는 동안 count도 1씩 증가하게 한다. \n",
+    "    - 아래 코드를 완성\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "nIqGh0xJF17K"
+   },
+   "outputs": [],
+   "source": [
+    "blackpink = [\"제니\", \"지수\", \"로제\", \"리사\"]\n",
+    "count =   \n",
+    "for member in blackpink :\n",
+    "    print (member)\n",
+    "    count =  \n",
+    "print (\"멤버수는: %d\" % count)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "FOaVw_7qF17O"
+   },
+   "outputs": [],
+   "source": [
+    "# 리스트, 조건문과 같이 사용\n",
+    "score= [55, 70, 92, 88]\n",
+    "\n",
+    "number = 0 \n",
+    "for i in score: \n",
+    "    number = number +1 \n",
+    "    if i >= 90: \n",
+    "        print(\"%d번 과목은 A입니다.\" % number)\n",
+    "    elif i>=80:\n",
+    "        print(\"%d번 과목은 B입니다.\" % number)\n",
+    "    elif i>=70:\n",
+    "        print(\"%d번 과목은 C입니다.\" % number)\n",
+    "    else: \n",
+    "        print(\"%d번 과목은 D입니다.\" % number)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "KdZp94ouF17R"
+   },
+   "outputs": [],
+   "source": [
+    "#다중 for문\n",
+    "\n",
+    "blackpink = [\"제니\", \"지수\", \"로제\", \"리사\"]\n",
+    "for member in blackpink :\n",
+    "    print (member)\n",
+    "    for name in member:\n",
+    "        print (name)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "zmflenhwF17X"
+   },
+   "outputs": [],
+   "source": [
+    "#구구단\n",
+    "\n",
+    "for i in range (2,10,1):                   #2부터 9까지 반복\n",
+    "    for j in range (1,10,1):               #1부터 9까지 반복\n",
+    "        print(i, \"*\", j, \"=\",i*j) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "colab_type": "text",
+    "id": "D-8vJGu0F17a"
+   },
+   "source": [
+    "#### [실습3] 위 구구단 코드를 수정하여 각 단이 끝날 때마다 *로 가로줄을 그어 구분이 되도록 해보세요.\n",
+    " - 힌트 :  j가 9가 되면 \"*\"을 10번 곱하여 출력하게 한다. \n",
+    " - if j == 9 : , print (\"*\"*10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "CJr-0ylYF17b"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "colab_type": "text",
+    "id": "74evrfzDF17f"
+   },
+   "source": [
+    "#### break : 조건에 만족하면 (아무 것도 하지 말고) 반복문에서 빠져 나와라\n",
+    "#### continue : 조건에 만족하면 (아무 것도 하지 말고) 반복문의 처음으로 다시 돌아가서 반복해라"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "XdDMSTYkF17g"
+   },
+   "outputs": [],
+   "source": [
+    "i = 0 # 변수선언\n",
+    "while i < 10 :          #while 뒤에 조건식\n",
+    "    print (i)           #여기까지만 쓰면 무한루프에 빠짐\n",
+    "    i = i + 1           #조건의 변경 i+=1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "8-L7oHCXF17j"
+   },
+   "outputs": [],
+   "source": [
+    "# 위의 식을 break를 써서 표현\n",
+    "i = 0\n",
+    "while True : #무한루프\n",
+    "    print(i)\n",
+    "    i = i +1\n",
+    "    if i >= 10:\n",
+    "        break"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "PQG0s4yTF17n"
+   },
+   "outputs": [],
+   "source": [
+    "#for와 break를 써서 1부터 9까지 차례대로 출력하는 코드\n",
+    "\n",
+    "for i in range (1, 100):\n",
+    "    print(i)\n",
+    "    break"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "gVojF4VXF17q"
+   },
+   "outputs": [],
+   "source": [
+    "#1부터 9사이의 짝수를 출력하는 코드\n",
+    "for i in range (1, 10):\n",
+    "    if i % 2 == 0 :\n",
+    "        print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "Uu1a8GsKF17t"
+   },
+   "outputs": [],
+   "source": [
+    "#continue를 사용해서 1부터 9사이의 짝수를 출력하는 코드를 작성해보세요. \n",
+    "for i in range (1, 10):\n",
+    "    if i % 2 != 0 :\n",
+    "        continue\n",
+    "    print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "ToCdvGr2F17w"
+   },
+   "outputs": [],
+   "source": [
+    "ReVe = [\"아이린\", \"슬기\", \"웬디\", \"조이\", \"예리\"]\n",
+    "i  = 0 \n",
+    "while i < 4 :\n",
+    "    print(ReVe[i]) \n",
+    "    i = i + 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "colab_type": "text",
+    "id": "VPPEPqPLF172"
+   },
+   "source": [
+    "#### [실습4] \n",
+    "1. 리스트 x = [2,4,6,8]를 만든다.\n",
+    "2. 변수 mx를 만들어 x의 평균값을 대입한다.\n",
+    "3. 변수 divisor에는 (x-x평균)^2의 합을 대입한다. sum()함수를 활용해 요소들의 합을 구할 수 있다. ![image.png](attachment:image.png)\n",
+    "4. sum([])은 평균 mx에서 x에 있는 원소들(i)을 하나씩 뺀 값을 제곱한 후 모두 더하는 식이다. sum([(mx-i)**2] for i in x])\n",
+    "5. divisor값을 출력한다. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "pYlpHu5GF173"
+   },
+   "outputs": [],
+   "source": [
+    "x = [2,4,6,8]\n",
+    "mx = (2+4+6+8) / 4\n",
+    "print(mx)\n",
+    "divisor = sum([(mx - i)**2 for i in x])\n",
+    "print (divisor)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "colab_type": "text",
+    "id": "aCFfqwc2F176"
+   },
+   "source": [
+    "### list comprehension\n",
+    "- 리스트 안에 조건, 반복식을 한꺼번에 표현할 수 있어 간편하다.\n",
+    "- [표현식 for 변수 in 리스트이름] 같은 형식으로 사용"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "Kz7UElvXF177"
+   },
+   "outputs": [],
+   "source": [
+    "bprv = [[\"제니\",\"아이린\"],[\"로제\",\"웬디\"],[\"리사\",\"슬기\"],[\"지수\",\"조이\"]]\n",
+    "\n",
+    "bp = [i[0] for i in bprv]\n",
+    "rv = [i[1] for i in bprv]\n",
+    "\n",
+    "print(bp)\n",
+    "print(rv)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/",
+     "height": 54
+    },
+    "colab_type": "code",
+    "executionInfo": {
+     "elapsed": 1213,
+     "status": "ok",
+     "timestamp": 1595162491044,
+     "user": {
+      "displayName": "Jay Gil코딩교양스쿨",
+      "photoUrl": "https://lh3.googleusercontent.com/a-/AOh14GjoPdf7Y46IMrWQyFGWhNtfQi17ny21c127vMWlZw=s64",
+      "userId": "00479002118889490588"
+     },
+     "user_tz": -540
+    },
+    "id": "2Mxq5veXF17_",
+    "outputId": "22196b3f-5132-4e88-fb1c-9eff926c66cd"
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2, 4, 6, 8, 10, 12, 14, 16, 18, 3, 6, 9, 12, 15, 18, 21, 24, 27, 4, 8, 12, 16, 20, 24, 28, 32, 36, 5, 10, 15, 20, 25, 30, 35, 40, 45, 6, 12, 18, 24, 30, 36, 42, 48, 54, 7, 14, 21, 28, 35, 42, 49, 56, 63, 8, 16, 24, 32, 40, 48, 56, 64, 72, 9, 18, 27, 36, 45, 54, 63, 72, 81]\n"
+     ]
+    }
+   ],
+   "source": [
+    "구구단 = [i*j for i in range(2,10) for j in range(1,10)]\n",
+    "print(구구단)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "anyLUR8jF18D"
+   },
+   "outputs": [],
+   "source": [
+    "# for문 뒤에 if 조건문을 추가할 수도 있다.\n",
+    "\n",
+    "a = [[1,11],[2,22],[3,33],[4,44],[5,55]]\n",
+    "x = [i[0] for i in a if i[0] > 3]\n",
+    "y = [i[1] for i in a if i[1] % 2 != 0]\n",
+    "\n",
+    "print(x)\n",
+    "print(y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {},
+    "colab_type": "code",
+    "id": "wqL6uWqyF18H"
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "name": "06. 반복문.ipynb",
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
